@@ -27,31 +27,13 @@ function ContactWithCaptcha() {
   };
 
   const handleSendMail = async (e) => {
-    if (!captcha) {
-      toast.error('Please complete the captcha!');
-      return;
-    } else {
-      const res = await axios.post(`${process.env.NEXT_PUBLIC_APP_URL}/api/google`, {
-        token: captcha
-      });
-
-      setCaptcha(null);
-      if (!res.data.success) {
-        toast.error('Captcha verification failed!');
-        return;
-      };
-    };
-
     e.preventDefault();
-    if (!input.email || !input.message || !input.name) {
-      setError({ ...error, required: true });
-      return;
-    } else if (error.email) {
-      return;
-    } else {
-      setError({ ...error, required: false });
-    };
+    if (!input.name || !input.email || !input.message) {
+      toast.error('Please complete all the field.');
+      return false
+    }
 
+    // send data
     const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
     const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
     const options = { publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY };
@@ -127,10 +109,6 @@ function ContactWithCaptcha() {
               value={input.message}
             />
           </div>
-          <ReCAPTCHA
-            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
-            onChange={(code) => setCaptcha(code)}
-          />
           <div className="flex flex-col items-center gap-2">
             {error.required &&
               <p className="text-sm text-red-400">

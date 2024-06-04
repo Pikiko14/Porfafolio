@@ -1,14 +1,31 @@
 // @flow strict
-
-import * as React from 'react';
+import Link from "next/link";
+import * as React from "react";
+import Image from "next/image";
+import { FaCode, FaPlay } from "react-icons/fa";
 
 function ProjectCard({ project }) {
-
+  const { name, description, tags, code, demo, image, features } = project;
   return (
     <div className="from-[#0d1224] border-[#1b2c68a0] relative rounded-lg border bg-gradient-to-r to-[#0a0d37] w-full">
       <div className="flex flex-row">
         <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-pink-500 to-violet-600"></div>
         <div className="h-[1px] w-full bg-gradient-to-r from-violet-600 to-transparent"></div>
+      </div>
+      <div className="flex items-end justify-between w-full">
+        <Link
+          href={demo}
+          target='_blank'
+          className="flex justify-center items-center w-10 h-10 rounded-full border-2 border-[#EFF3F4] text-[#EFF3F4] transition-all duration-300 hover:bg-[#231d4b] hover:text-violet-600 hover:border-[#0F0C41] hover:scale-110 decoration-clone cursor-pointer no-underline delay-[0.3s]">
+          <FaPlay />
+        </Link>
+        <Link
+          href={code}
+          target="_blank"
+          className="flex justify-center items-center w-10 h-10 rounded-full border-2 border-[#EFF3F4] text-[#EFF3F4] transition-all duration-300 hover:bg-[#231d4b] hover:text-violet-600 hover:border-[#0F0C41] hover:scale-110 cursor-pointer no-underline  delay-[0.3s] group-hover:translate-x-[-140px]"
+        >
+          <FaCode />
+        </Link>
       </div>
       <div className="px-4 lg:px-8 py-3 lg:py-5 relative">
         <div className="flex flex-row space-x-1 lg:space-x-2 absolute top-1/2 -translate-y-1/2">
@@ -26,7 +43,7 @@ function ProjectCard({ project }) {
             <span className="mr-2 text-pink-500">const</span>
             <span className="mr-2 text-white">project</span>
             <span className="mr-2 text-pink-500">=</span>
-            <span className="text-gray-400">{'{'}</span>
+            <span className="text-gray-400">{"{"}</span>
           </div>
           <div>
             <span className="ml-4 lg:ml-8 mr-2 text-white">name:</span>
@@ -38,17 +55,14 @@ function ProjectCard({ project }) {
           <div className="ml-4 lg:ml-8 mr-2">
             <span className=" text-white">tools:</span>
             <span className="text-gray-400">{` ['`}</span>
-            {
-              project.tools.map((tag, i) => (
-                <React.Fragment key={i}>
-                  <span className="text-amber-300">{tag}</span>
-                  {
-                    project.tools.length - 1 !== i &&
-                    <span className="text-gray-400">{`', '`}</span>
-                  }
-                </React.Fragment>
-              ))
-            }
+            {project.tools.map((tag, i) => (
+              <React.Fragment key={i}>
+                <span className="text-amber-300">{tag}</span>
+                {project.tools.length - 1 !== i && (
+                  <span className="text-gray-400">{`', '`}</span>
+                )}
+              </React.Fragment>
+            ))}
             <span className="text-gray-400">{"],"}</span>
           </div>
           <div>
@@ -58,14 +72,25 @@ function ProjectCard({ project }) {
           </div>
           <div className="ml-4 lg:ml-8 mr-2">
             <span className="text-white">Description:</span>
-            <span className="text-cyan-400">{' ' + project.description}</span>
+            <span className="text-cyan-400">{" " + project.description}</span>
             <span className="text-gray-400">,</span>
           </div>
-          <div><span className="text-gray-400">{`};`}</span></div>
+          <div>
+            <span className="text-gray-400">{`};`}</span>
+          </div>
         </code>
+      </div>
+      <div className="p-6">
+        <Image
+          src={image ? image?.src : placeholder}
+          alt={name}
+          width={1080}
+          height={720}
+          className="w-80 h-64 transition-opacity duration-[0.7s] delay-[0.3s] rounded-lg group-hover:opacity-0"
+        />
       </div>
     </div>
   );
-};
+}
 
 export default ProjectCard;
