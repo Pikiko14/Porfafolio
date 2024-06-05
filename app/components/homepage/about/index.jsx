@@ -28,7 +28,7 @@ function AboutSection() {
             width={400}
             height={280}
             alt="Marcos Hernandez"
-            className="rounded-lg transition-all duration-1000 hover:scale-120 cursor-pointer"
+            className="rounded-lg transition-all duration-1000 hover:scale-110 cursor-pointer"
           />
         </div>
       </div>
