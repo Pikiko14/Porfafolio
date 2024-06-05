@@ -119,6 +119,7 @@ function HeroSection() {
                 <span className="text-amber-300">Vue js</span>
                 <span className="text-gray-400">{"', '"}</span>
                 <span className="text-amber-300">Quasar framework</span>
+                <span className="text-gray-400">{"', '"}</span>
                 <span className="text-amber-300">Php</span>
                 <span className="text-gray-400">{"', '"}</span>
                 <span className="text-amber-300">Laravel</span>
