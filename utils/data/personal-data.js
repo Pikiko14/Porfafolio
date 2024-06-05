@@ -2,7 +2,7 @@ export const personalData = {
   name: "Marcos Hernandez",
   profile: '/profile.png',
   designation: "Software Developer",
-  description: "My name is Marcos Hernandez. My name is Marcos Hernandez. I am a professional and enthusiastic programmer, constantly learning and improving on my own. I am very interested in discovering new technologies and solving problems, even if I don't always succeed. I work with different web development stacks, but I strive to make the web more accessible, though it can be challenging. My main skill is in JavaScript, and I try to use it for everything, even if it's not always the best choice. I am available for any job opportunity that fits my skills and interests, even if I may not be the best at everything.",
+  description: "My name is Marcos Hernández. I am a professional and enthusiastic programmer, constantly learning and improving on my own. I am very interested in discovering new technologies and solving problems, even if I don't always succeed. I work with different web development stacks, but I strive to make the web more accessible, though it can be challenging. My main skill is in JavaScript, and I try to use it for everything, even if it's not always the best choice. I am available for any job opportunity that fits my skills and interests, even if I may not be the best at everything.",
   email: 'maalhequi95@gmail.com',
   phone: '+573244937535',
   address: 'Carrera 81 # 6A - 51, Medellin - Colombia ',
