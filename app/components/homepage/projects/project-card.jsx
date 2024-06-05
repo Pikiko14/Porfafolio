@@ -13,19 +13,23 @@ function ProjectCard({ project }) {
         <div className="h-[1px] w-full bg-gradient-to-r from-violet-600 to-transparent"></div>
       </div>
       <div className="flex items-end justify-between w-full">
+      {demo && demo.length > 0 ? (
         <Link
           href={demo}
           target='_blank'
           className="flex justify-center items-center w-10 h-10 rounded-full border-2 border-[#EFF3F4] text-[#EFF3F4] transition-all duration-300 hover:bg-[#231d4b] hover:text-violet-600 hover:border-[#0F0C41] hover:scale-110 decoration-clone cursor-pointer no-underline delay-[0.3s]">
           <FaPlay />
         </Link>
-        <Link
+      ) : ''}
+      {code && code.length > 0 ? (
+         <Link
           href={code}
           target="_blank"
           className="flex justify-center items-center w-10 h-10 rounded-full border-2 border-[#EFF3F4] text-[#EFF3F4] transition-all duration-300 hover:bg-[#231d4b] hover:text-violet-600 hover:border-[#0F0C41] hover:scale-110 cursor-pointer no-underline  delay-[0.3s] group-hover:translate-x-[-140px]"
         >
           <FaCode />
         </Link>
+      ) : ''}
       </div>
       <div className="px-4 lg:px-8 py-3 lg:py-5 relative">
         <div className="flex flex-row space-x-1 lg:space-x-2 absolute top-1/2 -translate-y-1/2">
@@ -81,13 +85,15 @@ function ProjectCard({ project }) {
         </code>
       </div>
       <div className="p-6">
+      {image && image.src ? (
         <Image
           src={image ? image?.src : placeholder}
           alt={name}
           width={1080}
           height={720}
-          className="w-80 h-64 transition-opacity duration-[0.7s] delay-[0.3s] rounded-lg group-hover:opacity-0"
+          className="w-85 h-64 transition-opacity duration-[0.7s] delay-[0.3s] rounded-lg group-hover:opacity-0"
         />
+      ) : (<span></span>)}
       </div>
     </div>
   );
