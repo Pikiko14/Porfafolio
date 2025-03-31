@@ -1,6 +1,6 @@
 export const contactsData = {
     email: 'maalhequi95@gmail.com',
-    phone: '+573244937535',
+    phone: '+573225361689',
     address: 'Carrera 81 # 6A - 51, Medellin, Colombia',
     github: 'https://github.com/Pikiko14',
     facebook: 'https://www.facebook.com/Maalhequ95',

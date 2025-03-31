@@ -37,7 +37,7 @@ const SingleProject = ({ project }) => {
 
       <div className='flex flex-col items-center justify-between w-full h-full'>
         <h2 className='text-[#EFF3F4] not-italic font-semibold text-[1.525rem] leading-[110%] text-center capitalize'>
-          {name} 123
+          {name}
         </h2>
         <div className="p-6">
           <Image

@@ -25,8 +25,8 @@ function AboutSection() {
         <div style={{ marginTop: '-50px' }} className="flex justify-center order-1 lg:order-2">
           <Image
             src={personalData.profile}
-            width={400}
-            height={280}
+            width={200}
+            height={180}
             alt="Marcos Hernandez"
             className="rounded-lg transition-all duration-1000 hover:scale-110 cursor-pointer"
           />

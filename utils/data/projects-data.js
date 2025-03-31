@@ -52,7 +52,7 @@ export const projectsData = [
         tools: ['Quasar Framework', 'Capacitor', 'Vue Js'],
         role: 'FullStack Developer',
         code: 'https://gitlab.com/olasanmi/onexdelivery-app',
-        demo: '',
+        demo: 'https://app.onexdelivery.com',
         image: delivery,
     },
     {
