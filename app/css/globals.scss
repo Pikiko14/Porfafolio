@@ -15,6 +15,9 @@
 body {
   color: rgb(var(--foreground-rgb));
   background-color: #0d1224;
+  @media(max-width: 768px) {
+    overflow-x: hidden !important;
+  }
 }
 
 #sticky-card-1 {
